@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" href="/bilder/film.png">
+        <title>Kinobilletter</title>
+        <style> /*Har måtte legge til noe styling her i dokumentet for å få inputboksene, tekstene og andre ting til å bli lik layouten på oppgavebildet siden det står i oppgaven "HTML-layout skal se slik ut:"*/
+            input{
+                margin-bottom: 5px;
+            }
+            button{
+                border: solid 1px;
+                border-color: rgb(188, 187, 187);
+                border-radius: 5px;
+                background-color: white;
+            }
+            label.alignment{
+                width: 100px;
+                display: inline-block;
+            }
+            label{
+                font-size: 18px;
+            }
+            #utskrift{
+                font-weight: bold;
+                font-size: larger;
+                margin-bottom: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!--<form id="myForm" action="action_index2.php" method="POST" onsubmit="return validateForm()" enctype="multipart/form-data"> er det riktig å ha laget alt dette i en form? hvorfor går den til en ny side når jeg bruker denne istedenfor den under-->
+            <form id="myForm" action="index2.php" method="POST"></form><!--har jeg </form> på slutten her så fungerer det. da hopper dne ikke til en ny side, whyyyyyy-->
+            
+            <h1>Bestilling av kinobilletter</h1><!--mister "velg film her når jeg tar kjøp billett uten å ha puttet inn noen verdier. hvordan fikse??"-->
+            <label for="filmer">Velg film:</label> <!--drop down meny-->
+            <select id="filmer">
+                <option value="Film Antall Fornavn Etternavn Telefonnr Epost">Velg film her</option>
+                <option value="Iron Man">Iron Man</option>
+                <option value="The Dark Knight Rises">The Dark Knight Rises</option>
+                <option value="Iron Man 3">Iron Man 3</option>
+                <option value="Captain America: The First Avenger">Captain America: The First Avenger</option>
+            </select>
+
+            <br>
+            <br>
+
+            <!--<label for="antallBilletter">Antall</label>
+            <input id="antallBilletter" type="number" min="1" max="32" value="0">
+            <span id="feilAntall" style="color: red"></span>-->
+
+            <label for="antallBilletter">Antall</label>
+            <input id="antallBilletter" type="text" min="1" max="32" size="2">
+            <span id="feilAntall" style="color: red"></span>
+            
+            <br>
+            <br>
+
+            <label class="alignment" for="skrivFornavn">Fornavn</label>
+            <input type="text" id="skrivFornavn" placeholder="Kari" required size="24">
+            <span id="feilFornavn" style="color: red"></span>
+            
+            <br>
+            
+            <label class="alignment" for="skrivEtternavn">Etternavn</label>
+            <input type="text" id="skrivEtternavn" placeholder="Nordmann" required size="24">
+            <span id="feilEtternavn" style="color: red"></span>
+            
+            <br>
+
+            <label class="alignment" for="skrivTelefonnr">Telefonnr</label>
+            <input type="tel" id="skrivTelefonnr" placeholder="000 00 000" pattern="[0-9]{3}[0-9]{2}[0-9]{3}" size="24"> <!--få den til å skrive numrene med mellomrom i browseren-->
+            <span id="feilTelefonnr" style="color: red"></span>
+            
+            <br>
+
+            <label class="alignment" for="skrivEpost">Epost</label>
+            <input type="email" id="skrivEpost" placeholder="karinordmann@post.no" size="24">
+            <span id="feilEpost" style="color: red"></span>
+            
+            <br>
+
+            <button onclick="kjopBillett();">Kjøp billett</button>
+
+            <h2>Alle billetter</h2>
+
+            <div id="utskrift"></div> <!--vil at den skal skrive ut i større skriftstr-->
+
+            <button onclick="slettBillett()">Slett alle billettene</button>
+
+            <br>
+            <br>
+            
+        </form>
+
+        <script src="js.js"></script> <!--Denne kobler min html fil med min java script fil. Jeg har satt den på bunnen så det ikke går utover den hvis noe feil i html filen skjer.-->
+    </body>
+
+</html> 
