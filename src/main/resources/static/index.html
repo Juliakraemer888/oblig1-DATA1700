@@ -29,10 +29,8 @@
     </head>
 
     <body>
-        <!--<form id="myForm" action="action_index2.php" method="POST" onsubmit="return validateForm()" enctype="multipart/form-data"> er det riktig å ha laget alt dette i en form? hvorfor går den til en ny side når jeg bruker denne istedenfor den under-->
-            <!--<form id="myForm" action="index2.php" method="POST"></form>har jeg </form> på slutten her så fungerer det. da hopper dne ikke til en ny side, whyyyyyy-->
             
-            <h1>Bestilling av kinobilletter</h1><!--mister "velg film her når jeg tar kjøp billett uten å ha puttet inn noen verdier. hvordan fikse??"-->
+            <h1>Bestilling av kinobilletter</h1>
             <label for="filmer">Velg film:</label> <!--drop down meny-->
             <select id="filmer">
                 <option value="Film Antall Fornavn Etternavn Telefonnr Epost">Velg film her</option>
@@ -44,10 +42,6 @@
 
             <br>
             <br>
-
-            <!--<label for="antallBilletter">Antall</label>
-            <input id="antallBilletter" type="number" min="1" max="32" value="0">
-            <span id="feilAntall" style="color: red"></span>-->
 
             <label for="antallBilletter">Antall</label>
             <input id="antallBilletter" type="text" min="1" max="32" size="2">
@@ -69,7 +63,7 @@
             <br>
 
             <label class="alignment" for="skrivTelefonnr">Telefonnr</label>
-            <input type="tel" id="skrivTelefonnr" size="24"  pattern="[0-9]{8}"> <!--få den til å skrive numrene med mellomrom i browseren-->
+            <input type="tel" id="skrivTelefonnr" size="24"  pattern="[0-9]{8}">
             <span id="feilTelefonnr" style="color: red"></span>
             
             <br>
